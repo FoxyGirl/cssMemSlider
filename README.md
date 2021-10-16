@@ -2,4 +2,4 @@
 
 HTML, CSS Slider
 
-https://FoxyGirl.github.io/cssMemSlider/
+https://FoxyGirl.github.io/cssMemSlider/cssMemSlider/
