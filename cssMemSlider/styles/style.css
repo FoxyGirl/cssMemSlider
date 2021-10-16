@@ -1,7 +1,19 @@
+html {
+  font-size: 20px;
+}
+
 body {
-  background-color: black;
+  min-width: 320px;
+  margin: 0;
+  box-sizing: border-box;
   font-family: Tahoma, Arial, sans-serif;
-  font-size: 16px;
+  background-color: #000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 .visually-hidden {
@@ -22,22 +34,30 @@ body {
 
 .slider {
   position: relative;
-  width: 1100px;
-  height: 700px;
-  margin: 60px auto;
+  width: 57vw;
+  margin: 10vh auto;
 }
 
 .slider__inner {
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 36vw auto;
+  grid-template-areas:
+    "slides   slides  slides"
+    "text     text    controls";
+  column-gap: 1.5rem;
+  row-gap: 2rem;
 }
 
 .slider__wrap {
+  grid-area: slides;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   border: 5px solid #fff;
   border-radius: 2rem;
+  overflow: hidden;
 }
 
 .slider__slides {
@@ -51,16 +71,17 @@ body {
 }
 
 .slider__nav {
+  grid-area: controls;
   display: flex;
   width: 100%;
-  justify-content: center;
-  margin-top: 40px;
+  justify-content: end;
+  padding-top: 10px;
 }
 
 .slider__nav-item {
-  width: 20px;
-  height: 20px;
-  margin: 0 20px;
+  width: 1rem;
+  height: 1rem;
+  margin: 0 0.5rem;
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
@@ -120,8 +141,9 @@ body {
 }
 
 .slider__text {
+  grid-area: text;
   width: 100%;
-  margin-top: 3rem;
+  height: max-content;
   overflow: hidden;
 }
 
@@ -138,4 +160,53 @@ body {
 .text__item {
   width: 20%;
   transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+
+  .slider {
+    width: 80vw;
+  }
+
+  .slider__inner {
+    grid-template-rows: 50vw auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+
+  .slider {
+    width: 90vw;
+  }
+
+  .slider__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vw auto;
+    grid-template-areas:
+      "slides"
+      "controls"
+      "text";
+    row-gap: 4rem;
+  }
+
+  .slider__wrap {
+    border-width: 3px;
+  }
+
+  .slider__nav {
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .slider__nav-item {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 1.2rem;
+  }
 }
