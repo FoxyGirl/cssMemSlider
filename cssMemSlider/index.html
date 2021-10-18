@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Slider</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <h1 class="visually-hidden">Pure CSS Slider</h1>
+    <div class="slider">
+      <input type="radio" name="slide" id="slide1" checked />
+      <input type="radio" name="slide" id="slide2" />
+      <input type="radio" name="slide" id="slide3" />
+      <input type="radio" name="slide" id="slide4" />
+      <input type="radio" name="slide" id="slide5" />
+
+      <div class="slider__inner">
+        <div class="slider__wrap">
+          <div class="slider__slides">
+            <div class="slider__slide start">
+              <img src="./img/mem-01.jpg" alt="" />
+            </div>
+            <div class="slider__slide">
+              <img src="./img/mem-02.jpeg" alt="" />
+            </div>
+            <div class="slider__slide">
+              <img src="./img/mem-03.jpg" alt="" />
+            </div>
+            <div class="slider__slide">
+              <img src="./img/mem-04.jpg" alt="" />
+            </div>
+            <div class="slider__slide">
+              <img src="./img/mem-05.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="slider__nav">
+          <label for="slide1" class="slider__nav-item"></label>
+          <label for="slide2" class="slider__nav-item"></label>
+          <label for="slide3" class="slider__nav-item"></label>
+          <label for="slide4" class="slider__nav-item"></label>
+          <label for="slide5" class="slider__nav-item"></label>
+        </div>
+
+        <div class="slider__text text">
+          <ul class="text__list">
+            <li class="text__item start">So code. Very logic. Much Wow</li>
+            <li class="text__item">Tell me again we test too much</li>
+            <li class="text__item">It's not a bug, it is a&nbsp;feature</li>
+            <li class="text__item">
+              You cannot just take and become a&nbsp;developer
+            </li>
+            <li class="text__item">You've done it! My&nbsp;congrats!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
